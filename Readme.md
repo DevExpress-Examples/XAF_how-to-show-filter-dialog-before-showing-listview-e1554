@@ -1,3 +1,14 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [WinModule.cs](./CS/E1554.Module.Win/WinModule.cs) (VB: [WinModule.vb](./VB/E1554.Module.Win/WinModule.vb))
+* [WinShowFilterDialogController.cs](./CS/E1554.Module.Win/WinShowFilterDialogController.cs) (VB: [WinShowFilterDialogController.vb](./VB/E1554.Module.Win/WinShowFilterDialogController.vb))
+* [Module.cs](./CS/E1554.Module/Module.cs)
+* [NewViewFilterObjectController.cs](./CS/E1554.Module/NewViewFilterObjectController.cs) (VB: [NewViewFilterObjectController.vb](./VB/E1554.Module/NewViewFilterObjectController.vb))
+* **[ShowFilterDialogController.cs](./CS/E1554.Module/ShowFilterDialogController.cs) (VB: [ShowFilterDialogController.vb](./VB/E1554.Module/ShowFilterDialogController.vb))**
+* [ViewFilterContainer.cs](./CS/E1554.Module/ViewFilterContainer.cs) (VB: [ViewFilterContainer.vb](./VB/E1554.Module/ViewFilterContainer.vb))
+* [ViewFilterObject.cs](./CS/E1554.Module/ViewFilterObject.cs) (VB: [ViewFilterObject.vb](./VB/E1554.Module/ViewFilterObject.vb))
+<!-- default file list end -->
 # How to show filter dialog before showing ListView
 
 
