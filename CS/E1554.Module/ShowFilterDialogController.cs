@@ -13,19 +13,33 @@ namespace E1554.Module {
 
         ShowNavigationItemController showNavigationItemController;
         ListView oldListView;
+        ChoiceActionItem selectedChoiceActionItem;
+        bool showFromController = false;
 
         protected override void OnActivated() {
             base.OnActivated();
             showNavigationItemController = Frame.GetController<ShowNavigationItemController>();
             if (showNavigationItemController != null) {
-                showNavigationItemController.ShowNavigationItemAction.Execute += ShowNavigationItemAction_Execute;
-                showNavigationItemController.CustomUpdateSelectedItem += showNavigationItemController_CustomUpdateSelectedItem;
+                showNavigationItemController.CustomShowNavigationItem += ShowNavigationItemController_CustomShowNavigationItem;
             }
         }
-
-        void ShowNavigationItemAction_Execute(object sender, SingleChoiceActionExecuteEventArgs e) {
-            if (e.ShowViewParameters.CreatedView is ListView) {
-                oldListView = (ListView)e.ShowViewParameters.CreatedView;
+        private void ShowNavigationItemAction_Executed(object sender, ActionBaseEventArgs e) {
+            showNavigationItemController.ShowNavigationItemAction.Executed -= ShowNavigationItemAction_Executed;
+            if(showFromController) {
+                e.ShowViewParameters.CreatedView = oldListView;
+            }
+        }
+        private void ShowNavigationItemController_CustomShowNavigationItem(object sender, CustomShowNavigationItemEventArgs e) {
+            if (showFromController) {
+                return;
+            }
+            ViewShortcut shortcut = e.ActionArguments.SelectedChoiceActionItem.Data as ViewShortcut;
+            if(shortcut != null) {
+                oldListView = Application.ProcessShortcut(shortcut) as ListView;
+            }
+            if(oldListView != null) {
+                e.Handled = true;
+                selectedChoiceActionItem = e.ActionArguments.SelectedChoiceActionItem;
                 NonPersistentObjectSpace nonPersistentObjectSpace = (NonPersistentObjectSpace)Application.CreateObjectSpace(typeof(ViewFilterContainer));
                 IObjectSpace persistentObjectSpace = Application.CreateObjectSpace(typeof(ViewFilterObject));
                 nonPersistentObjectSpace.AdditionalObjectSpaces.Add(persistentObjectSpace);
@@ -35,26 +49,29 @@ namespace E1554.Module {
                 DetailView filterDetailView = Application.CreateDetailView(nonPersistentObjectSpace, newViewFilterContainer);
                 filterDetailView.Caption = String.Format("Filter for the {0} ListView", oldListView.Caption);
                 filterDetailView.ViewEditMode = ViewEditMode.Edit;
-                e.ShowViewParameters.CreatedView = filterDetailView;
-                e.ShowViewParameters.TargetWindow = TargetWindow.NewModalWindow;
+                e.ActionArguments.ShowViewParameters.CreatedView = filterDetailView;
+                e.ActionArguments.ShowViewParameters.TargetWindow = TargetWindow.NewModalWindow;
                 DialogController dialogCotnroller = Application.CreateController<DialogController>();
                 dialogCotnroller.Accepting += new EventHandler<DialogControllerAcceptingEventArgs>(dialogCotnroller_Accepting);
                 dialogCotnroller.ViewClosed += dialogCotnroller_ViewClosed;
-                e.ShowViewParameters.Controllers.Add(dialogCotnroller);
+                e.ActionArguments.ShowViewParameters.Controllers.Add(dialogCotnroller);
             }
         }
-
         void dialogCotnroller_Accepting(object sender, DialogControllerAcceptingEventArgs e) {
             ViewFilterContainer currentViewFilterContainer = (ViewFilterContainer)e.AcceptActionArgs.CurrentObject;
             ListView targetView = GetTargetView();
             ((IModelListViewAdditionalCriteria)targetView.Model).AdditionalCriteria = currentViewFilterContainer.Criteria;
             targetView.CollectionSource.Criteria["ByViewFilterObject"] = CriteriaEditorHelper.GetCriteriaOperator(currentViewFilterContainer.Criteria, currentViewFilterContainer.ObjectType, targetView.ObjectSpace);
-            ShowViewParameters parameters = new ShowViewParameters(targetView);
-            parameters.TargetWindow = TargetWindow.Current;
-            parameters.Context = TemplateContext.View;
-            ShowViewSource source = new ShowViewSource(Frame, showNavigationItemController.ShowNavigationItemAction);
-            Application.ShowViewStrategy.ShowView(parameters, source);
-            oldListView = null;
+            showNavigationItemController.ShowNavigationItemAction.Executed += ShowNavigationItemAction_Executed;
+            try {
+                showFromController = true;
+                showNavigationItemController.ShowNavigationItemAction.DoExecute(selectedChoiceActionItem);
+            }
+            finally {
+                showFromController = false;
+                oldListView = null;
+                selectedChoiceActionItem = null;
+            }
         }
 
         protected virtual ListView GetTargetView() {
@@ -63,6 +80,7 @@ namespace E1554.Module {
 
         void dialogCotnroller_ViewClosed(object sender, EventArgs e) {
             oldListView = null;
+            selectedChoiceActionItem = null;
         }
 
         private ViewFilterObject GetFilterObject(IObjectSpace objectSpace, string listViewCriteria, Type objectType) {
@@ -76,22 +94,14 @@ namespace E1554.Module {
             }
             return filterObject;
         }
-
-        void showNavigationItemController_CustomUpdateSelectedItem(object sender, CustomUpdateSelectedItemEventArgs e) {
-            if (oldListView != null) {
-                e.ProposedSelectedItem = showNavigationItemController.FindNavigationItemByViewShortcut(oldListView.CreateShortcut());
-                e.Handled = true;
-            }
-        }
-
         protected override void OnDeactivated() {
             base.OnDeactivated();
             if (showNavigationItemController != null) {
-                showNavigationItemController.ShowNavigationItemAction.Execute -= ShowNavigationItemAction_Execute;
-                showNavigationItemController.CustomUpdateSelectedItem -= showNavigationItemController_CustomUpdateSelectedItem;
+                showNavigationItemController.CustomShowNavigationItem -= ShowNavigationItemController_CustomShowNavigationItem;
                 showNavigationItemController = null;
             }
             oldListView = null;
+            selectedChoiceActionItem = null;
         }
     }
 }
