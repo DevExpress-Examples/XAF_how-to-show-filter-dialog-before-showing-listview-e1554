@@ -6,6 +6,7 @@ using DevExpress.ExpressApp.Editors;
 using DevExpress.Data.Filtering;
 
 namespace E1554.Module {
+
     public class ShowFilterDialogController : WindowController {
         public ShowFilterDialogController() {
             TargetWindowType = WindowType.Main;
