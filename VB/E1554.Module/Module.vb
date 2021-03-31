@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 
 Imports DevExpress.ExpressApp
@@ -11,6 +10,7 @@ Imports System.ComponentModel
 Namespace E1554.Module
     Partial Public NotInheritable Class E1554Module
         Inherits ModuleBase
+
         Public Sub New()
             InitializeComponent()
         End Sub
@@ -19,9 +19,10 @@ Namespace E1554.Module
             extenders.Add(Of IModelListView, IModelListViewAdditionalCriteria)()
         End Sub
     End Class
-	Public Interface IModelListViewAdditionalCriteria
-	Inherits IModelNode
-		<DefaultValue("")> _
+    Public Interface IModelListViewAdditionalCriteria
+		Inherits IModelNode
+
+		<DefaultValue("")>
 		Property AdditionalCriteria() As String
 	End Interface
 End Namespace

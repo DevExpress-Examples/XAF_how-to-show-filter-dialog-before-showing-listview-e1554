@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace E1554.Module.Web
+﻿Namespace E1554.Module.Web
 	Partial Public Class E1554AspNetModule
 		''' <summary> 
 		''' Required designer variable.

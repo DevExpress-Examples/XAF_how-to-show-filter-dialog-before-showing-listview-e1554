@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 
 Imports DevExpress.Xpo
 
@@ -10,9 +9,10 @@ Imports DevExpress.Persistent.Validation
 Imports DevExpress.Data.Filtering
 
 Namespace E1554.Module
-	<DefaultClassOptions> _
+	<DefaultClassOptions>
 	Public Class Master
 		Inherits BaseObject
+
 		Public Sub New(ByVal session As Session)
 			MyBase.New(session)
 		End Sub
@@ -25,7 +25,7 @@ Namespace E1554.Module
 				SetPropertyValue("MasterName", _MasterName, value)
 			End Set
 		End Property
-		<Association("Master-Details")> _
+		<Association("Master-Details")>
 		Public ReadOnly Property Details() As XPCollection(Of Detail)
 			Get
 				Return GetCollection(Of Detail)("Details")

@@ -10,9 +10,6 @@
 
 
 
-
-Imports Microsoft.VisualBasic
-Imports System
 Partial Public Class LoginPage
 
 	''' <summary>
@@ -22,7 +19,7 @@ Partial Public Class LoginPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
+	Protected Head1 As System.Web.UI.HtmlControls.HtmlHead
 
 	''' <summary>
 	''' form1 control.
@@ -31,7 +28,7 @@ Partial Public Class LoginPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+	Protected form1 As System.Web.UI.HtmlControls.HtmlForm
 
 	''' <summary>
 	''' ProgressControl control.
@@ -49,5 +46,5 @@ Partial Public Class LoginPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected Content As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+	Protected Content As System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

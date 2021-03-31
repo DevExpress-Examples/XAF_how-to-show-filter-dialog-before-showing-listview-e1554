@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Configuration
 Imports System.Web.Configuration
 Imports System.Web
@@ -14,6 +13,7 @@ Imports DevExpress.Web
 Namespace E1554.Web
 	Public Class [Global]
 		Inherits System.Web.HttpApplication
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub

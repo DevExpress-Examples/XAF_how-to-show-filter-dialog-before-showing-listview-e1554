@@ -1,4 +1,3 @@
-Imports Microsoft.VisualBasic
 Imports System
 Imports System.IO
 Imports System.Collections
@@ -21,12 +20,13 @@ Imports DevExpress.ExpressApp.Web.SystemModule
 
 Partial Public Class ErrorPage
 	Inherits System.Web.UI.Page
+
 	Protected Overrides Sub InitializeCulture()
 		If WebApplication.Instance IsNot Nothing Then
 			WebApplication.Instance.InitializeCulture()
 		End If
 	End Sub
-	Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+	Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 		Dim testScriptsManager As New TestScriptsManager(Page)
 		testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "FormCaption", TestControlType.Field, "FormCaption")
 		testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "DescriptionTextBox", TestControlType.Field, "Description")
@@ -59,12 +59,14 @@ Partial Public Class ErrorPage
 	End Sub
 
 	Private Sub InitializeComponent()
-'		Me.Load += New System.EventHandler(Me.Page_Load);
-'		Me.PreRender += New EventHandler(ErrorPage_PreRender);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Page_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.PreRender += new EventHandler(ErrorPage_PreRender);
 	End Sub
 
-	Private Sub ErrorPage_PreRender(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.PreRender
-		RegisterThemeAssemblyController.RegisterThemeResources(CType(sender, Page))
+	Private Sub ErrorPage_PreRender(ByVal sender As Object, ByVal e As EventArgs) Handles Me.PreRender
+		RegisterThemeAssemblyController.RegisterThemeResources(DirectCast(sender, Page))
 	End Sub
 
 	#End Region

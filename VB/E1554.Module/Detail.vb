@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 
 Imports DevExpress.Xpo
 
@@ -9,9 +8,10 @@ Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
 Namespace E1554.Module
-	<DefaultClassOptions> _
+	<DefaultClassOptions>
 	Public Class Detail
 		Inherits BaseObject
+
 		Public Sub New(ByVal session As Session)
 			MyBase.New(session)
 		End Sub
@@ -25,7 +25,7 @@ Namespace E1554.Module
 			End Set
 		End Property
 		Private _Master As Master
-		<Association("Master-Details")> _
+		<Association("Master-Details")>
 		Public Property Master() As Master
 			Get
 				Return _Master

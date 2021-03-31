@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Linq
 Imports System.Text
 Imports System.ComponentModel
@@ -16,15 +15,16 @@ Imports DevExpress.ExpressApp.Model.NodeGenerators
 Imports DevExpress.Persistent.BaseImpl
 
 Namespace E1554.Module.Web
-	<ToolboxItemFilter("Xaf.Platform.Web")> _
+	<ToolboxItemFilter("Xaf.Platform.Web")>
 	Public NotInheritable Partial Class E1554AspNetModule
 		Inherits ModuleBase
+
 		Private Sub Application_CreateCustomModelDifferenceStore(ByVal sender As Object, ByVal e As CreateCustomModelDifferenceStoreEventArgs)
-			e.Store = New ModelDifferenceDbStore(CType(sender, XafApplication), GetType(ModelDifference), True)
+			e.Store = New ModelDifferenceDbStore(DirectCast(sender, XafApplication), GetType(ModelDifference), True)
 			e.Handled = True
 		End Sub
 		Private Sub Application_CreateCustomUserModelDifferenceStore(ByVal sender As Object, ByVal e As CreateCustomModelDifferenceStoreEventArgs)
-			e.Store = New ModelDifferenceDbStore(CType(sender, XafApplication), GetType(ModelDifference), False)
+			e.Store = New ModelDifferenceDbStore(DirectCast(sender, XafApplication), GetType(ModelDifference), False)
 			e.Handled = True
 		End Sub
 		Public Sub New()

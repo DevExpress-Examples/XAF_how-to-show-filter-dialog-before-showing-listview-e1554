@@ -9,9 +9,6 @@
 
 
 
-
-Imports Microsoft.VisualBasic
-Imports System
 Partial Public Class ErrorPage
 
 	''' <summary>
@@ -21,7 +18,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
+	Protected Head1 As System.Web.UI.HtmlControls.HtmlHead
 
 	''' <summary>
 	''' form1 control.
@@ -30,7 +27,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+	Protected form1 As System.Web.UI.HtmlControls.HtmlForm
 
 	''' <summary>
 	''' ApplicationTitle control.
@@ -39,7 +36,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected ApplicationTitle As Global.System.Web.UI.WebControls.Literal
+	Protected ApplicationTitle As System.Web.UI.WebControls.Literal
 
 	''' <summary>
 	''' InfoMessagesPanel control.
@@ -48,7 +45,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected InfoMessagesPanel As Global.System.Web.UI.WebControls.Literal
+	Protected InfoMessagesPanel As System.Web.UI.WebControls.Literal
 
 	''' <summary>
 	''' Table1 control.
@@ -57,7 +54,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected Table1 As Global.System.Web.UI.WebControls.Table
+	Protected Table1 As System.Web.UI.WebControls.Table
 
 	''' <summary>
 	''' TableRow2 control.
@@ -66,7 +63,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected TableRow2 As Global.System.Web.UI.WebControls.TableRow
+	Protected TableRow2 As System.Web.UI.WebControls.TableRow
 
 	''' <summary>
 	''' ViewSite control.
@@ -75,7 +72,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected ViewSite As Global.System.Web.UI.WebControls.TableCell
+	Protected ViewSite As System.Web.UI.WebControls.TableCell
 
 	''' <summary>
 	''' ErrorTitleLiteral control.
@@ -84,7 +81,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected ErrorTitleLiteral As Global.System.Web.UI.WebControls.Literal
+	Protected ErrorTitleLiteral As System.Web.UI.WebControls.Literal
 
 	''' <summary>
 	''' ErrorPanel control.
@@ -93,7 +90,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected ErrorPanel As Global.System.Web.UI.WebControls.Panel
+	Protected ErrorPanel As System.Web.UI.WebControls.Panel
 
 	''' <summary>
 	''' ReportResult control.
@@ -102,7 +99,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected ReportResult As Global.System.Web.UI.WebControls.PlaceHolder
+	Protected ReportResult As System.Web.UI.WebControls.PlaceHolder
 
 	''' <summary>
 	''' ApologizeMessage control.
@@ -111,7 +108,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected ApologizeMessage As Global.System.Web.UI.WebControls.PlaceHolder
+	Protected ApologizeMessage As System.Web.UI.WebControls.PlaceHolder
 
 	''' <summary>
 	''' HyperLink1 control.
@@ -120,7 +117,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected HyperLink1 As Global.System.Web.UI.WebControls.HyperLink
+	Protected HyperLink1 As System.Web.UI.WebControls.HyperLink
 
 	''' <summary>
 	''' NavigateToStart control.
@@ -129,7 +126,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected NavigateToStart As Global.System.Web.UI.WebControls.LinkButton
+	Protected NavigateToStart As System.Web.UI.WebControls.LinkButton
 
 	''' <summary>
 	''' Details control.
@@ -138,7 +135,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected Details As Global.System.Web.UI.WebControls.Panel
+	Protected Details As System.Web.UI.WebControls.Panel
 
 	''' <summary>
 	''' DetailsText control.
@@ -147,7 +144,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected DetailsText As Global.System.Web.UI.WebControls.Literal
+	Protected DetailsText As System.Web.UI.WebControls.Literal
 
 	''' <summary>
 	''' ReportForm control.
@@ -156,7 +153,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected ReportForm As Global.System.Web.UI.WebControls.Panel
+	Protected ReportForm As System.Web.UI.WebControls.Panel
 
 	''' <summary>
 	''' DescriptionTextBox control.
@@ -165,7 +162,7 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected DescriptionTextBox As Global.System.Web.UI.WebControls.TextBox
+	Protected DescriptionTextBox As System.Web.UI.WebControls.TextBox
 
 	''' <summary>
 	''' ReportButton control.
@@ -174,5 +171,5 @@ Partial Public Class ErrorPage
 	''' Auto-generated field.
 	''' To modify move field declaration from designer file to code-behind file.
 	''' </remarks>
-	Protected ReportButton As Global.System.Web.UI.WebControls.Button
+	Protected ReportButton As System.Web.UI.WebControls.Button
 End Class

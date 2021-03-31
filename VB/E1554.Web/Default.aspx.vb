@@ -1,4 +1,3 @@
-Imports Microsoft.VisualBasic
 Imports System
 Imports System.Collections.Generic
 Imports System.Web.UI
@@ -9,6 +8,7 @@ Imports DevExpress.ExpressApp.Web.Templates.ActionContainers
 
 Partial Public Class [Default]
 	Inherits BaseXafPage
+
 	Protected Overrides Function CreateContextActionsMenu() As ContextActionsMenu
 		Return New ContextActionsMenu(Me, "Edit", "RecordEdit", "ObjectsCreation", "ListView", "Reports")
 	End Function

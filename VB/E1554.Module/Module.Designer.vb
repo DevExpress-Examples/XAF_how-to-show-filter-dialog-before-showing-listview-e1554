@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace E1554.Module
+﻿Namespace E1554.Module
     Partial Public Class E1554Module
         ''' <summary> 
         ''' Required designer variable.

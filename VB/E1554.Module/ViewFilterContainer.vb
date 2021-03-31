@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports DevExpress.ExpressApp.Editors
 Imports System.ComponentModel
 Imports DevExpress.Persistent.Base
@@ -9,11 +8,13 @@ Imports DevExpress.ExpressApp.DC
 Imports System.Collections.Generic
 
 Namespace E1554.Module
-	<DomainComponent> _
+	<DomainComponent>
 	Public Class ViewFilterContainer
 		Implements IObjectSpaceLink
+
 		Private _Filter As ViewFilterObject
-		<DataSourceProperty("Filters"), ImmediatePostData> _
+		<DataSourceProperty("Filters")>
+		<ImmediatePostData>
 		Public Property Filter() As ViewFilterObject
 			Get
 				Return _Filter
@@ -23,7 +24,7 @@ Namespace E1554.Module
 			End Set
 		End Property
 		Private _Filters As IList(Of ViewFilterObject)
-		<Browsable(False)> _
+		<Browsable(False)>
 		Public ReadOnly Property Filters() As IList(Of ViewFilterObject)
 			Get
 				If _Filters Is Nothing AndAlso ObjectType IsNot Nothing Then
@@ -32,7 +33,8 @@ Namespace E1554.Module
 				Return _Filters
 			End Get
 		End Property
-		<CriteriaOptions("ObjectType"), ImmediatePostData> _
+		<CriteriaOptions("ObjectType")>
+		<ImmediatePostData>
 		Public Property Criteria() As String
 			Get
 				Return If(Filter IsNot Nothing, Filter.Criteria, String.Empty)
@@ -44,7 +46,7 @@ Namespace E1554.Module
 			End Set
 		End Property
 		Private _ObjectType As Type
-		<Browsable(False)> _
+		<Browsable(False)>
 		Public Property ObjectType() As Type
 			Get
 				Return _ObjectType

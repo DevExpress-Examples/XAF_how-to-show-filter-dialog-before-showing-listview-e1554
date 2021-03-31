@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -15,10 +15,6 @@
     <UpgradeBackupLocation></UpgradeBackupLocation>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <OptionExplicit>On</OptionExplicit>
-    <OptionCompare>Binary</OptionCompare>
-    <OptionStrict>Off</OptionStrict>
-    <OptionInfer>On</OptionInfer>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -33,7 +29,10 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +43,7 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -53,94 +53,166 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
   </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Utils.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.Utils.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.BonusSkins.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Pdf.v16.1.Core">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.Pdf.v16.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Printing.v16.1.Core">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.Printing.v16.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.Data.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Xpo.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.ExpressApp.Xpo.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.ExpressApp.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Images.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.ExpressApp.Images.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Objects.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.ExpressApp.Objects.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Security.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.ExpressApp.Security.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Validation.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.ExpressApp.Validation.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Validation.Win.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.ExpressApp.Validation.Win.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Win.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.ExpressApp.Win.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Persistent.Base.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.Persistent.Base.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Persistent.BaseImpl.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.Persistent.BaseImpl.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Xpo.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.Xpo.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraBars.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraBars.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v16.1.Core">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.Charts.v16.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraCharts.v16.1.Wizard">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraCharts.v16.1.Wizard.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraCharts.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraCharts.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraEditors.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraEditors.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraGrid.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraGrid.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraLayout.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraLayout.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraNavBar.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraNavBar.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraPrinting.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraPrinting.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Office.v16.1.Core">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.Office.v16.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.RichEdit.v16.1.Core">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.RichEdit.v16.1.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraRichEdit.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraRichEdit.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraVerticalGrid.v16.1">
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <HintPath>C:\DXDlls\16.1.17\DevExpress.XtraVerticalGrid.v16.1.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -170,8 +242,9 @@
     <Compile Include="Program.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="WinApplication.resx">
@@ -196,6 +269,7 @@
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My</CustomToolNamespace>
     </None>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>

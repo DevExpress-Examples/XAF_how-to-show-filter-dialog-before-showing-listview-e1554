@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Xpo
 Imports DevExpress.ExpressApp.Editors
@@ -7,26 +6,27 @@ Imports System.ComponentModel
 Imports DevExpress.ExpressApp.Utils
 
 Namespace E1554.Module
-	<DefaultProperty("FilterName")> _
+	<DefaultProperty("FilterName")>
 	Public Class ViewFilterObject
 		Inherits BaseObject
+
 		Public Sub New(ByVal session As Session)
 			MyBase.New(session)
 		End Sub
 		Private _ObjectType As Type
-		<ValueConverter(GetType(TypeToStringConverter)), MemberDesignTimeVisibility(False)> _
+		<ValueConverter(GetType(TypeToStringConverter)), MemberDesignTimeVisibility(False)>
 		Public Property ObjectType() As Type
 			Get
 				Return _ObjectType
 			End Get
 			Set(ByVal value As Type)
-				If SetPropertyValue("ObjectType", _ObjectType, value) AndAlso (Not IsLoading) Then
+				If SetPropertyValue("ObjectType", _ObjectType, value) AndAlso Not IsLoading Then
 					Criteria = String.Empty
 				End If
 			End Set
 		End Property
 		Private _Criteria As String
-		<CriteriaOptions("ObjectType")> _
+		<CriteriaOptions("ObjectType")>
 		Public Property Criteria() As String
 			Get
 				Return _Criteria

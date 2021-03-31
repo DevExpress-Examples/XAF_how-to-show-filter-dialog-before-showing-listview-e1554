@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace E1554.Win
+﻿Namespace E1554.Win
 	Partial Public Class E1554WindowsFormsApplication
 		''' <summary> 
 		''' Required designer variable.
@@ -35,7 +33,7 @@ Namespace E1554.Win
 			Me.securityModule1 = New DevExpress.ExpressApp.Security.SecurityModule()
 			Me.securityStrategyComplex1 = New DevExpress.ExpressApp.Security.SecurityStrategyComplex()
 			Me.authenticationActiveDirectory1 = New DevExpress.ExpressApp.Security.AuthenticationActiveDirectory()
-			CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+			DirectCast(Me, System.ComponentModel.ISupportInitialize).BeginInit()
 			' 
 			' module5
 			' 
@@ -65,8 +63,9 @@ Namespace E1554.Win
 			Me.Modules.Add(Me.module7)
 			Me.Modules.Add(Me.securityModule1)
 			Me.Security = Me.securityStrategyComplex1
-'			Me.DatabaseVersionMismatch += New System.EventHandler(Of DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs)(Me.E1554WindowsFormsApplication_DatabaseVersionMismatch);
-			CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.E1554WindowsFormsApplication_DatabaseVersionMismatch);
+			DirectCast(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
 		End Sub
 
