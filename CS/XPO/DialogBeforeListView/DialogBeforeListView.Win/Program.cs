@@ -10,6 +10,9 @@ using DevExpress.XtraEditors;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.ExpressApp.Win.Utils;
 using System.Reflection;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DialogBeforeListView.Win;
 

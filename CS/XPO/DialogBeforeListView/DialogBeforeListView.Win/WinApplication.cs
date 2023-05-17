@@ -5,6 +5,7 @@ using DevExpress.ExpressApp.Win;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Win.Utils;
 using DevExpress.ExpressApp.Xpo;
+using System;
 
 namespace DialogBeforeListView.Win;
 

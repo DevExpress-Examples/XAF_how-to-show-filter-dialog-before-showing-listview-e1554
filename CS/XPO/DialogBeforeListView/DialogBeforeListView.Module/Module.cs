@@ -14,7 +14,10 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 
 namespace DialogBeforeListView.Module;
-
+public interface IModelListViewAdditionalCriteria : IModelNode {
+    [DefaultValue("")]
+    string AdditionalCriteria { get; set; }
+}
 // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
 public sealed class DialogBeforeListViewModule : ModuleBase {
     public DialogBeforeListViewModule() {
@@ -40,8 +43,5 @@ public sealed class DialogBeforeListViewModule : ModuleBase {
         base.CustomizeTypesInfo(typesInfo);
         CalculatedPersistentAliasHelper.CustomizeTypesInfo(typesInfo);
     }
-    public interface IModelListViewAdditionalCriteria : IModelNode {
-        [DefaultValue("")]
-        string AdditionalCriteria { get; set; }
-    }
+ 
 }
