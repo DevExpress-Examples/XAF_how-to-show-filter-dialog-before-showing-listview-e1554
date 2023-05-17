@@ -6,6 +6,7 @@ using DevExpress.ExpressApp.SystemModule;
 using DevExpress.ExpressApp.Win;
 using DevExpress.ExpressApp.Win.Templates;
 using DialogBeforeListViewEF.Module;
+using DialogBeforeListViewEF.Win;
 using System;
 
 namespace E1554.Module.Win {
@@ -110,11 +111,5 @@ namespace E1554.Module.Win {
 
 
 
-    public class MyMdiShowViewStrategy : MdiShowViewStrategy {
-        public MyMdiShowViewStrategy(XafApplication application, MdiMode mdiMode) : base(application, mdiMode) { }
-        public DevExpress.ExpressApp.View FindExistingView(DevExpress.ExpressApp.View view) {
-            WinWindow window = FindWindowByView(view);
-            return window == null ? null : window.View;
-        }
-    }
+ 
 }
