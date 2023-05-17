@@ -20,7 +20,7 @@
 <p><strong>Scenario:</strong></p>
 <p>When a user executes a navigation item that displays a large ListView, the application should display a popup window that allows you to define a filter for this ListView before loading records in it. This filter dialog should remember the user's choice and provide the capability to select one of the stored filters.</p>
 <p><strong>Ste</strong><strong>ps to implement:</strong></p>
-<p>1. Create a ListView model extender - <strong>IModelListViewExt</strong> - that adds the AdditionalCriteria property to the ListView model to store the filter selected by the user.</p>
+<p>1. Create a ListView model extender - <strong>IModelListViewAdditionalCriteria</strong> - that adds the AdditionalCriteria property to the ListView model to store the filter selected by the user.</p>
 <p>2. Implement the <strong>ViewFilterContainer</strong> class whose DetailView is used as a filter dialog.</p>
 <p>3. Implement the <strong>ViewFilterObject</strong> class which is used to store filters.</p>
 <p>4. Implement the <strong>ShowFilterDialogController</strong> which shows the filter dialog instead of displaying the ListView, and then shows the filtered ListView. To do this, subscribe to the ShowNavigationItemController.ShowNavigationItemAction.Execute event and replace the ListView from the e.ShowViewParameters.CreatedView property with the ViewFilterContainer DetailView. Then show the filtered ListView using the Window.SetView method for WinForms SDI and Web applications or by setting the ShowViewParameters.CreatedView property for WinForms MDI applications.</p>
