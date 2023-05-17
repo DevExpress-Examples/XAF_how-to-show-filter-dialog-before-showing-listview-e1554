@@ -18,6 +18,7 @@ namespace E1554.Module {
 
         protected override void OnActivated() {
             base.OnActivated();
+            
             showNavigationItemController = Frame.GetController<ShowNavigationItemController>();
             if(showNavigationItemController != null) {
                 showNavigationItemController.CustomShowNavigationItem += ShowNavigationItemController_CustomShowNavigationItem;
