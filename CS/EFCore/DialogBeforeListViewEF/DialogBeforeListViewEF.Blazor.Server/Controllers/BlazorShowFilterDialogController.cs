@@ -2,7 +2,7 @@
 using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp;
 using E1554.Module;
-using DialogBeforeListView.Module;
+using DialogBeforeListViewEF.Module;
 
 namespace DialogBeforeListView.Blazor.Server.Controllers {
     public class BlazorShowFilterDialogController : ViewController<ListView> {
