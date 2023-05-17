@@ -8,6 +8,8 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
+using System.Collections.Generic;
+using System;
 
 namespace DialogBeforeListView.Win;
 
