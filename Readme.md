@@ -10,6 +10,7 @@
 
 When a user executes a navigation item that displays a large ListView, the application should display a popup window that allows you to define a filter for this ListView before loading records in it. This filter dialog should remember the user's choice and provide the capability to select one of the stored filters.
 
+![chrome_xTdZReiKm4](https://github.com/DevExpress-Examples/XAF_how-to-show-filter-dialog-before-showing-listview-e1554/assets/14300209/ebfa62d4-f4b7-489e-94f1-3c76d691375f)
 
 ## Implementation Details
 
